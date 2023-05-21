@@ -1,4 +1,4 @@
-package com.ariq.citcitapi;
+package com.team1.citcitapi;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

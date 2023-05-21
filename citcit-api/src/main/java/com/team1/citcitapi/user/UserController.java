@@ -1,4 +1,4 @@
-package com.ariq.citcitapi.user;
+package com.team1.citcitapi.user;
 
 import java.util.List;
 import java.util.Optional;
@@ -11,12 +11,12 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.ariq.citcitapi.post.model.Post;
-import com.ariq.citcitapi.post.model.dto.PostResponse;
-import com.ariq.citcitapi.user.model.AppUser;
-import com.ariq.citcitapi.user.model.dto.UserRequest.UserRequestLogin;
-import com.ariq.citcitapi.user.model.dto.UserRequest.UserRequestRegister;
-import com.ariq.citcitapi.user.model.dto.UserResponse.UserResponse;
+import com.team1.citcitapi.post.model.Post;
+import com.team1.citcitapi.post.model.dto.PostResponse;
+import com.team1.citcitapi.user.model.AppUser;
+import com.team1.citcitapi.user.model.dto.UserRequest.UserRequestLogin;
+import com.team1.citcitapi.user.model.dto.UserRequest.UserRequestRegister;
+import com.team1.citcitapi.user.model.dto.UserResponse.UserResponse;
 
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;

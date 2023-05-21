@@ -1,6 +1,6 @@
-package com.ariq.citcitapi.user.model.dto.UserRequest;
+package com.team1.citcitapi.user.model.dto.UserRequest;
 
-import com.ariq.citcitapi.user.model.AppUser;
+import com.team1.citcitapi.user.model.AppUser;
 
 import jakarta.validation.constraints.NotEmpty;
 import lombok.AllArgsConstructor;

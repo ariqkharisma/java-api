@@ -1,8 +1,8 @@
-package com.ariq.citcitapi.user.model.dto.UserResponse;
+package com.team1.citcitapi.user.model.dto.UserResponse;
 
 import java.util.List;
 
-import com.ariq.citcitapi.post.model.Post;
+import com.team1.citcitapi.post.model.Post;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

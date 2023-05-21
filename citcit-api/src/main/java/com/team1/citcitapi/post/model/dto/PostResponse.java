@@ -1,8 +1,8 @@
-package com.ariq.citcitapi.post.model.dto;
+package com.team1.citcitapi.post.model.dto;
 
 import java.sql.Timestamp;
 
-import com.ariq.citcitapi.user.model.dto.UserResponse.UserResponsePost;
+import com.team1.citcitapi.user.model.dto.UserResponse.UserResponsePost;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

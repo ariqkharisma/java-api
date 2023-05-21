@@ -1,4 +1,4 @@
-package com.ariq.citcitapi.user.model.dto.UserResponse;
+package com.team1.citcitapi.user.model.dto.UserResponse;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

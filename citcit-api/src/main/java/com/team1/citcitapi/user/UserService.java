@@ -1,10 +1,10 @@
-package com.ariq.citcitapi.user;
+package com.team1.citcitapi.user;
 
 import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
-import com.ariq.citcitapi.user.model.AppUser;
+import com.team1.citcitapi.user.model.AppUser;
 
 import lombok.RequiredArgsConstructor;
 

@@ -1,13 +1,14 @@
-package com.ariq.citcitapi.post;
+package com.team1.citcitapi.post;
 
-import java.util.List;
 import java.util.Optional;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import com.ariq.citcitapi.post.model.Post;
-import com.ariq.citcitapi.user.UserRepository;
-import com.ariq.citcitapi.user.model.AppUser;
+import com.team1.citcitapi.post.model.Post;
+import com.team1.citcitapi.user.UserRepository;
+import com.team1.citcitapi.user.model.AppUser;
 
 import lombok.RequiredArgsConstructor;
 
@@ -17,19 +18,18 @@ public class PostService {
     private final PostRepository postRepository;
     private final UserRepository userRepository;
 
-    public List<Post> getAll(Optional<String> title, Optional<String> username) {
+    public Page<Post> getAll(Optional<String> title, Optional<String> username, Pageable pageable) {
 
         if (username.isPresent()) {
-            List<Post> postsFilter = this.postRepository.findByUsername(username.get());
-            return postsFilter;
+            return this.postRepository.findByUsername(username.get(), pageable);
         }
 
         if (title.isPresent()) {
-            List<Post> postsFilter = this.postRepository.findByTitleContainingIgnoreCase(title.get());
-            return postsFilter;
+            return this.postRepository.findByTitleContainingIgnoreCase(title.get(), pageable);
+           
         }
 
-        return this.postRepository.findAll();
+        return this.postRepository.findAll(pageable);
     }
 
     public Optional<Post> getOne(int id) {

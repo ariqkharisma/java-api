@@ -1,13 +1,13 @@
-package com.ariq.citcitapi.post.model;
+package com.team1.citcitapi.post.model;
 
 import java.sql.Timestamp;
 
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
-import com.ariq.citcitapi.post.model.dto.PostResponse;
-import com.ariq.citcitapi.user.model.AppUser;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.team1.citcitapi.post.model.dto.PostResponse;
+import com.team1.citcitapi.user.model.AppUser;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

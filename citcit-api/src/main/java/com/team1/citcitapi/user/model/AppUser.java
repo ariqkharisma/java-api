@@ -1,10 +1,10 @@
-package com.ariq.citcitapi.user.model;
+package com.team1.citcitapi.user.model;
 
 import java.util.List;
 
-import com.ariq.citcitapi.post.model.Post;
-import com.ariq.citcitapi.user.model.dto.UserResponse.UserResponse;
-import com.ariq.citcitapi.user.model.dto.UserResponse.UserResponsePost;
+import com.team1.citcitapi.post.model.Post;
+import com.team1.citcitapi.user.model.dto.UserResponse.UserResponse;
+import com.team1.citcitapi.user.model.dto.UserResponse.UserResponsePost;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

@@ -1,8 +1,12 @@
-package com.ariq.citcitapi.post;
+package com.team1.citcitapi.post;
 
-import java.util.List;
 import java.util.Optional;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,9 +16,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.ariq.citcitapi.post.model.Post;
-import com.ariq.citcitapi.post.model.dto.PostRequest;
-import com.ariq.citcitapi.post.model.dto.PostResponse;
+import com.team1.citcitapi.post.model.Post;
+import com.team1.citcitapi.post.model.dto.PostRequest;
+import com.team1.citcitapi.post.model.dto.PostResponse;
 
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -26,14 +30,19 @@ public class PostController {
     private final PostService postService;
 
     @GetMapping("/posts")
-    public ResponseEntity<List<PostResponse>> getAllPosts(
+    public ResponseEntity<Page<PostResponse>> getAllPosts(
+            @RequestParam(name = "page", defaultValue = "1") Optional<Integer> optionalPage,
+            @RequestParam(name = "pageSize", defaultValue = "5") Optional<Integer> optionalPageSize,
             @RequestParam(name = "title", required = false) Optional<String> title,
             @RequestParam(name = "createdBy", required = false) Optional<String> createdBy) {
 
-                List<Post> posts = this.postService.getAll(title, createdBy);
-                List<PostResponse> postResponses = posts.stream().map(post -> post.convertToResponse()).toList();
+        Pageable pageable = PageRequest.of(optionalPage.get() - 1, optionalPageSize.get(),
+                Sort.by("createdAt").descending());
+        Page<Post> posts = this.postService.getAll(title, createdBy, pageable);
+        Page<PostResponse> postResponses = new PageImpl<>(posts.get().map(post -> post.convertToResponse()).toList(),
+                pageable, posts.getTotalElements());
 
-                return ResponseEntity.ok().body(postResponses);
+        return ResponseEntity.ok().body(postResponses);
     }
 
     @GetMapping("/posts/{id}")

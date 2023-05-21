@@ -1,7 +1,7 @@
-package com.ariq.citcitapi.post.model.dto;
+package com.team1.citcitapi.post.model.dto;
 
-import com.ariq.citcitapi.post.model.Post;
-import com.ariq.citcitapi.user.model.dto.UserRequest.UserRequestPost;
+import com.team1.citcitapi.post.model.Post;
+import com.team1.citcitapi.user.model.dto.UserRequest.UserRequestPost;
 
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Size;
