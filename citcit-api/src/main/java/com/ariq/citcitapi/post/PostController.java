@@ -30,7 +30,7 @@ public class PostController {
             @RequestParam(name = "title", required = false) Optional<String> title,
             @RequestParam(name = "createdBy", required = false) Optional<String> createdBy) {
 
-                List<Post> posts = this.postService.getAll(title);
+                List<Post> posts = this.postService.getAll(title, createdBy);
                 List<PostResponse> postResponses = posts.stream().map(post -> post.convertToResponse()).toList();
 
                 return ResponseEntity.ok().body(postResponses);

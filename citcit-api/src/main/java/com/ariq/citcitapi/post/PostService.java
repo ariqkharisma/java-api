@@ -17,7 +17,13 @@ public class PostService {
     private final PostRepository postRepository;
     private final UserRepository userRepository;
 
-    public List<Post> getAll(Optional<String> title) {
+    public List<Post> getAll(Optional<String> title, Optional<String> username) {
+
+        if (username.isPresent()) {
+            List<Post> postsFilter = this.postRepository.findByUsername(username.get());
+            return postsFilter;
+        }
+
         if (title.isPresent()) {
             List<Post> postsFilter = this.postRepository.findByTitleContainingIgnoreCase(title.get());
             return postsFilter;
