@@ -41,7 +41,7 @@ public class UserController {
     }
 
     @PostMapping("/users/login")
-    public ResponseEntity<UserResponse> userLogin(@RequestBody UserRequestLogin userRequest) {
+    public ResponseEntity<UserResponse> userLogin(@Valid @RequestBody UserRequestLogin userRequest) {
         AppUser user = userRequest.convertToEntity();
         Optional<AppUser> existingUser = this.userService.getOne(user);
 

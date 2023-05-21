@@ -2,6 +2,7 @@ package com.ariq.citcitapi.user.model.dto.UserRequest;
 
 import com.ariq.citcitapi.user.model.AppUser;
 
+import jakarta.validation.constraints.NotEmpty;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -12,11 +13,14 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 public class UserRequestLogin {
+
+    @NotEmpty
     private String username;
-    private String email;
+
+    @NotEmpty
     private String password;
 
     public AppUser convertToEntity() {
-        return AppUser.builder().username(this.username).email(this.email).password(this.password).build();
+        return AppUser.builder().username(this.username).password(this.password).build();
     }
 }
